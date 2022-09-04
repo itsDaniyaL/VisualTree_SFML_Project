@@ -8,6 +8,8 @@
 using namespace std;
 using namespace sf;
 
+
+//AVL Tree Setup 
 struct avl_node
 {
 	int data;
@@ -66,6 +68,7 @@ public:
 			cout << arr[index] << "  ";
 		Array_InOrder((2 * index) + 2);
 	}
+	//Returns the updated AVL Tree after each entry of data.
 	int* ArrRet()
 	{
 		return arr;
@@ -224,6 +227,7 @@ void avlTree::postorder(avl_node* tree)
 }
 
 
+//Hash Tree Setup
 class Hash
 {
 public:
@@ -237,6 +241,7 @@ public:
 		}
 	}
 
+	//Setting Linear Tree 
 	void Linear(int Data)
 	{
 		bool condi = true;
@@ -255,6 +260,7 @@ public:
 		}
 	}
 
+	//Setting Quadratic Tree
 	void Quadratic(int Data)
 	{
 		bool condi = true;
@@ -283,6 +289,7 @@ public:
 };
 
 
+//Binary Search Tree Setup
 class BST
 {
 	int* arr;
@@ -386,6 +393,7 @@ int main()
 	Color color(Color::Black);
 	sf::Event event;
 	Font font;
+	//Checking if arial font style is stored locally.
 	if (!font.loadFromFile("arial.ttf")) {
 		cout << "Font loading failed:" << endl;
 	}
@@ -399,6 +407,8 @@ int main()
 	Text Lin_Quad;
 	Text LQPick;
 
+
+	//Setting font text size, color, font style(arial.ttf)
 	for (int i = 0; i < 3; i++)
 	{
 		text[i].setFont(font);
@@ -447,6 +457,8 @@ int main()
 	LQPick.setCharacterSize(25);
 	LQPick.setStyle(Text::Bold);
 
+
+	//Setting Position for text and Tree nodes
 	text[0].setPosition(30, 10);
 	text[1].setPosition(30, 30);
 	text[2].setPosition(30, 50);
